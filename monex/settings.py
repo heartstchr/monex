@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'monex.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
-        'NAME': os.path.join(BASE_DIR, 'db_monex'),
+        'NAME': 'db_monex',
     }
 }
 
