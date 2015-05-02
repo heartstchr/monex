@@ -26,6 +26,17 @@ DATABASES = {
 
 Done!
 
+
+pip freeze :
+Django==1.5.11
+django-mongodb-engine==0.5.2
+djangotoolbox==1.6.2
+mongoengine==0.9.0
+pymongo==2.8
+South==1.0.2
+
+
+
 To test
 
 python manage.py runserver
