@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} MongoDb Example| Welcome {% endblock %}
+{% block content %}
+  <div class="container">
+    <h1>Post Here</h1>
+    <form method="post" action="http://127.0.0.1:8000/">
+      {% csrf_token %}
+      <p>
+          <input type="text"  name="title" class="form-control" placeholder="Post Title" required><br>
+          <textarea  name="content" class="form-control" placeholder="Enter Content" rows=5 required></textarea><br>
+          <input class="btn btn-success" type="submit" value="Add Post">
+      </p>
+    </form>
+<!-- Cycle through entries -->
+
+    {% for post in Posts %}
+      <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <p><h2 class="featurette-heading">{{ post.title }}</h2> <span class="text-muted">{{ post.last_update }}</span></p>
+            <p class="lead">{{ post.content }}</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          </div>
+          <div class="row">
+            <div class='col col-md-3'>
+              <form method="get" action="http://127.0.0.1:8000/update">
+                <input type="hidden" name="id" value="{{ post.id }}">
+                <input type="hidden" name="title" value="{{ post.title }}">
+                <input type="hidden" name="last_update" value="{{ post.last_update }}">
+                <input type="hidden" name="content" value="{{ post.content }}">
+                <input class="btn btn-success btn-lg" type="submit" name="" value="Edit">
+              </form>
+            </div>
+            <div class='col col-md-3'>
+              <form method="get" action="http://127.0.0.1:8000/delete">
+                <input type="hidden" name="id" value="{{post.id}}">
+                <input class="btn btn-warning btn-lg" type="submit" value="delete">
+              </form>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+{% endblock %}

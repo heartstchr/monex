@@ -13,6 +13,8 @@ pip install git+https://github.com/django-nonrel/djangotoolbox
 
 pip install git+https://github.com/django-nonrel/mongodb-engine
 
+pip install pymongo==2.8
+
 edit setting.py
 
 DATABASES = {
