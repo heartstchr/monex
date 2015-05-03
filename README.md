@@ -1,6 +1,8 @@
 # monex
 Mongo Db Django Example
 
+pip install -r requirements.txt
+
 edit setting.py
 
 DATABASES = {
