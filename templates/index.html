@@ -3,7 +3,7 @@
 {% block content %}
   <div class="container">
     <h1>Post Here</h1>
-    <form method="post" action="http://127.0.0.1:8000/">
+    <form method="post" action="http://localhost:8000/">
       {% csrf_token %}
       <p>
           <input type="text"  name="title" class="form-control" placeholder="Post Title" required><br>
@@ -26,7 +26,7 @@
           </div>
           <div class="row">
             <div class='col col-md-3'>
-              <form method="get" action="http://127.0.0.1:8000/update">
+              <form method="get" action="http://localhost:8000/update">
                 <input type="hidden" name="id" value="{{ post.id }}">
                 <input type="hidden" name="title" value="{{ post.title }}">
                 <input type="hidden" name="last_update" value="{{ post.last_update }}">
@@ -35,7 +35,7 @@
               </form>
             </div>
             <div class='col col-md-3'>
-              <form method="get" action="http://127.0.0.1:8000/delete">
+              <form method="get" action="http://localhost:8000/delete">
                 <input type="hidden" name="id" value="{{post.id}}">
                 <input class="btn btn-warning btn-lg" type="submit" value="delete">
               </form>

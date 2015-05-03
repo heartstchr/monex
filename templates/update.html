@@ -6,7 +6,7 @@
   </head> 
   <body>
     <h1>Blongo - Update Entry</h1>
-    <form method="post" action="http://127.0.0.1:8000/update/">
+    <form method="post" action="http://localhost:8000/update/">
       {% csrf_token %}
       <ul>
         <li><input type="hidden" name="id" value="{{post.id}}"></li>

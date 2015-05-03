@@ -167,7 +167,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/home/jiwan/Desktop/django/blongo/blogno.log',
+            'filename': '/Users/Anirudha/Documents/anistark/monex/blogno.log',
         }
     },
     'loggers': {
